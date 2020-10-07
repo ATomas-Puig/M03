@@ -21,8 +21,6 @@ public class Dau {
 
     @Override
     public String toString() {
-        return "E2.Dau{" +
-                "valor=" + valor +
-                '}';
+        return "valor: " + valor;
     }
 }

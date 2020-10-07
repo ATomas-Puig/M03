@@ -33,6 +33,7 @@ public class MenuDaus {
                     System.out.println("Discúlpanos otra vez, pero este juego tampoco está disponible en la versión gratuita.");
                     break;
                 case 4:
+                    System.out.println("¡Hasta luego!");
                     System.exit(0);
                     break;
                 default:
@@ -56,11 +57,22 @@ public class MenuDaus {
                     System.out.println(jocDaus);
                     break;
                 case 2:
-                    System.out.println("Has ganado " + jocDaus.getPuntuacion() + " veces.");
+                    System.out.println("**************************************");
+                    System.out.println("*             RESULTADOS             *");
+                    System.out.println("**************************************");
+                    System.out.println("Has ganado " + jocDaus.getPartidasGanadas() + " partidas.");
+                    System.out.println("Has perdido " + jocDaus.getPartidasPerdidas() + " partidas.");
+                    System.out.println("Has jugado un total de " + jocDaus.getTotalPartidas() + " partidas.");
                     menuPrincipal();
                     break;
                 case 3:
-                    System.out.println("Has ganado " + jocDaus.getPuntuacion() + " veces.");
+                    System.out.println("**************************************");
+                    System.out.println("*             RESULTADOS             *");
+                    System.out.println("**************************************");
+                    System.out.println("Has ganado " + jocDaus.getPartidasGanadas() + " partidas.");
+                    System.out.println("Has perdido " + jocDaus.getPartidasPerdidas() + " partidas.");
+                    System.out.println("Has jugado un total de " + jocDaus.getTotalPartidas() + " partidas.");
+                    System.out.println("¡Hasta luego!");
                     System.exit(0);
                     break;
                 default:

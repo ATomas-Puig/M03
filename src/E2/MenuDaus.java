@@ -38,7 +38,7 @@ public class MenuDaus {
                 default:
                     System.out.println("Elige una opción válida.");
             }
-        } while (opcion != 4);
+        } while (true);
     }
 
     private void menuDados(){
@@ -66,6 +66,6 @@ public class MenuDaus {
                 default:
                     System.out.println("Elige una opción válida.");
             }
-        } while (opcion != 3);
+        } while (true);
     }
 }

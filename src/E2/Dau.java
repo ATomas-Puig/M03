@@ -21,6 +21,6 @@ public class Dau {
 
     @Override
     public String toString() {
-        return "valor: " + valor;
+        return "valor: " + getValor();
     }
 }

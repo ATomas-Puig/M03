@@ -34,12 +34,12 @@ public class MenuDaus {
                     break;
                 case 4:
                     System.out.println("¡Hasta luego!");
-                    System.exit(0);
+                    //System.exit(0);
                     break;
                 default:
                     System.out.println("Elige una opción válida.");
             }
-        } while (true);
+        } while (opcion != 4);
     }
 
     private void menuDados(){
@@ -57,21 +57,11 @@ public class MenuDaus {
                     System.out.println(jocDaus);
                     break;
                 case 2:
-                    System.out.println("**************************************");
-                    System.out.println("*             RESULTADOS             *");
-                    System.out.println("**************************************");
-                    System.out.println("Has ganado " + jocDaus.getPartidasGanadas() + " partidas.");
-                    System.out.println("Has perdido " + jocDaus.getPartidasPerdidas() + " partidas.");
-                    System.out.println("Has jugado un total de " + jocDaus.getTotalPartidas() + " partidas.");
+                    resultado();
                     //opcion = 2;
                     break;
                 case 3:
-                    System.out.println("**************************************");
-                    System.out.println("*             RESULTADOS             *");
-                    System.out.println("**************************************");
-                    System.out.println("Has ganado " + jocDaus.getPartidasGanadas() + " partidas.");
-                    System.out.println("Has perdido " + jocDaus.getPartidasPerdidas() + " partidas.");
-                    System.out.println("Has jugado un total de " + jocDaus.getTotalPartidas() + " partidas.");
+                    resultado();
                     System.out.println("¡Hasta luego!");
                     System.exit(0);
                     break;
@@ -79,5 +69,14 @@ public class MenuDaus {
                     System.out.println("Elige una opción válida.");
             }
         } while (opcion != 2);
+    }
+    private void resultado(){
+        System.out.println("**************************************");
+        System.out.println("*             RESULTADOS             *");
+        System.out.println("**************************************");
+        System.out.println("Has ganado " + jocDaus.getPartidasGanadas() + " partidas.");
+        System.out.println("Has perdido " + jocDaus.getPartidasPerdidas() + " partidas.");
+        System.out.println("Has jugado un total de " + jocDaus.getTotalPartidas() + " partidas.");
+        System.out.println();
     }
 }

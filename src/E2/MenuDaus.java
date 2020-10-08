@@ -63,7 +63,7 @@ public class MenuDaus {
                     System.out.println("Has ganado " + jocDaus.getPartidasGanadas() + " partidas.");
                     System.out.println("Has perdido " + jocDaus.getPartidasPerdidas() + " partidas.");
                     System.out.println("Has jugado un total de " + jocDaus.getTotalPartidas() + " partidas.");
-                    menuPrincipal();
+                    //opcion = 2;
                     break;
                 case 3:
                     System.out.println("**************************************");
@@ -78,6 +78,6 @@ public class MenuDaus {
                 default:
                     System.out.println("Elige una opción válida.");
             }
-        } while (true);
+        } while (opcion != 2);
     }
 }

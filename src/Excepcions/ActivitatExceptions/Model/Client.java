@@ -1,16 +1,22 @@
 package Excepcions.ActivitatExceptions.Model;
 
 import Excepcions.ActivitatExceptions.Control.OperacionsBanc;
+import Excepcions.ActivitatExceptions.Exceptions.ClientAccountException;
+import Excepcions.ActivitatExceptions.Exceptions.ExceptionMessage;
 
 public class Client {
     private String Nom;
     private String Cognoms;
     private String DNI;
 
-    public Client(String nom, String cognoms, String DNI) {
+    public Client(String nom, String cognoms, String DNI) throws Exception {
         Nom = nom;
         Cognoms = cognoms;
-        if(OperacionsBanc.verifyDNI(DNI)) this.DNI = DNI;
+        if(OperacionsBanc.verifyDNI(DNI)) {
+            this.DNI = DNI;
+        } else{
+            throw new Exception(ExceptionMessage.WRONG_DNI);
+        }
 
     }
 

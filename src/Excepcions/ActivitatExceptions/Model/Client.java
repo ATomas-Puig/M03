@@ -9,13 +9,13 @@ public class Client {
     private String Cognoms;
     private String DNI;
 
-    public Client(String nom, String cognoms, String DNI) throws Exception {
+    public Client(String nom, String cognoms, String DNI) throws ClientAccountException {
         Nom = nom;
         Cognoms = cognoms;
         if(OperacionsBanc.verifyDNI(DNI)) {
             this.DNI = DNI;
         } else{
-            throw new Exception(ExceptionMessage.WRONG_DNI);
+            throw new ClientAccountException(ExceptionMessage.WRONG_DNI);
         }
 
     }

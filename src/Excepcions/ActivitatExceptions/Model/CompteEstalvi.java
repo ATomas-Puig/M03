@@ -6,7 +6,7 @@ import Excepcions.ActivitatExceptions.Exceptions.ExceptionMessage;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompteEstalvi {
+public class CompteEstalvi implements Comparable<CompteEstalvi>{
     private String numCompte;
     private double saldo;
     private List<Client> llista_usuaris;
@@ -78,5 +78,15 @@ public class CompteEstalvi {
 
     public List<Client> getLlista_usuaris() {
         return llista_usuaris;
+    }
+
+
+    @Override
+    public int compareTo(CompteEstalvi compteEstalvi) {
+        if (this.getNumCompte().equals(compteEstalvi.getNumCompte())){
+            return 1;
+        } else{
+            return -1;
+        }
     }
 }

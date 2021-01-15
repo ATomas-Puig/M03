@@ -54,9 +54,13 @@ public class SantaClaus {
         int renoRE = 0;
         int elfoRE = 0;
         try {
-            Pattern pareNoel = Pattern.compile("\\*<]:-DOo");
+
+            //Noel *<]:-DOo
+            //Reno >:o)
+            //Elfo <]:-D
+            Pattern pareNoel = Pattern.compile("[\\*]<]:-DOo");
             Pattern ren = Pattern.compile(">:o\\)");
-            Pattern follet = Pattern.compile("<]:-D(!?Oo)");
+            Pattern follet = Pattern.compile("[^\\*]<]:-D");
             Matcher matcherNoel;
             Matcher matcherRen;
             Matcher matcherFollet;
@@ -83,7 +87,7 @@ public class SantaClaus {
                     System.out.print("Ren (" + renoRE + ") ");
                 }
                 if (elfoRE != 0) {
-                    System.out.println("Follet (" + elfoRE + ")");
+                    System.out.print("Follet (" + elfoRE + ")");
                 }
                 santaRE = renoRE = elfoRE = 0;
                 System.out.println();

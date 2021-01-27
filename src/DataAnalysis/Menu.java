@@ -12,7 +12,27 @@ public class Menu {
     }
 
     public void showMenu(){
-        System.out.println("--- Red de talleres de Catalunya ---");
-        System.out.println("");
+        System.out.println("+-----------------------------------");
+        System.out.println("|   Red de talleres de Catalunya   |");
+        System.out.println("|          Menú principal          |");
+        System.out.println("+----------------------------------+");
+        System.out.println();
+        System.out.println("<1> Buscar talleres por provincia");
+        System.out.println("<2> Buscar talleres por municipio");
+        System.out.println("<3> Buscar talleres por código postal");
+        System.out.println("<4> Obtener el número de talleres por provincia");
+        System.out.println("<5> Buscar los talleres más antiguos por provincia");
+        String opcion = scanner.nextLine();
+
+        switch (opcion){
+            case "1":
+                searchWorkshopByProvince();
+        }
     }
+
+    private void searchWorkshopByProvince() {
+        System.out.println("Introduzca la provincia.");
+    }
+
+
 }

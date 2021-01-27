@@ -30,4 +30,21 @@ public class Row {
     public String text;
     public Date data_baixa;
     public List<Row> row;
+
+    @Override
+    public String toString() {
+        return  "-----------   Datos del taller   -----------" + "\n" +
+                "Número de registro: " + n_m_registre_taller + "\n" +
+                "Nombre del titular: " + nom_titular + "\n" +
+                "Rótulo: " + r_tol + "\n" +
+                "Dirección: " + adre_a_taller + "\n" +
+                "Código postal: " + codi_postal + "\n" +
+                "Municipio: " + municipi + "\n" +
+                "Código Idescat del municipio: " + municipi_codi_idescat + "\n" +
+                "Provincia: " + provincia + "\n" +
+                "Teléfono: " + tel_fon + "\n" +
+                "Estado: " + estat + "\n" +
+                "Fecha de alta: " + data_alta + "\n" +
+                "Fecha de baja: " + data_baixa + "\n";
+    }
 }

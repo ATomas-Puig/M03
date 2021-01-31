@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -47,4 +48,6 @@ public class Row {
                 "Fecha de alta: " + data_alta + "\n" +
                 "Fecha de baja: " + data_baixa + "\n";
     }
+
+
 }

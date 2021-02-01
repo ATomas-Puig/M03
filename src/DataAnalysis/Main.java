@@ -13,7 +13,5 @@ public class Main {
         } while (true);
 
         //new XMLReader(talleresXML);
-
-        //TODO dividir el código en clases: una para parsear, otra para mostrar los datos, otra de menú, etcétera.
     }
 }

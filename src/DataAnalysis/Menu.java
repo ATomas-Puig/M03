@@ -100,7 +100,7 @@ public class Menu {
     private void searchWorkshopsByCity() {
         System.out.println("Introduzca el municipio:");
         String municipio = scanner.nextLine();
-        rows.stream().filter(row -> row.getMunicipi().equalsIgnoreCase(municipio)).forEach(System.out::println);
+        rows.stream().filter(row -> row.getMunicipi().equalsIgnoreCase(municipio)).distinct().forEach(System.out::println);
     }
 
     private void searchWorkshopsByPostalCode() {
@@ -138,13 +138,13 @@ public class Menu {
     }
 
     private void sortWorkshopsByYear() {
-        rows.stream().sorted((row, t1) -> new ComparatorDataAlta().compare(row, t1)).limit(20).forEach(System.out::println);
+        rows.stream().sorted(new ComparatorDataAlta()).limit(20).forEach(System.out::println);
     }
 
     private void sortWorkshopsByYearAndProvince() {
         System.out.println("Introduzca la provincia:");
         String province = scanner.nextLine();
-        rows.stream().filter(row -> row.getProvincia().equalsIgnoreCase(province)).limit(10).forEach(System.out::println);
+        rows.stream().filter(row -> row.getProvincia().equalsIgnoreCase(province)).sorted(new ComparatorDataAlta()).limit(10).forEach(System.out::println);
         //.sorted((row, t1) -> row.getData_alta().compareTo(t1.getData_alta()))
 
         //int date = scanner.nextInt();
@@ -156,13 +156,13 @@ public class Menu {
     private void sortWorkshopsByYearAndCity() {
         System.out.println("Introduzca el municipio:");
         String city = scanner.nextLine();
-        rows.stream().filter(row -> row.getMunicipi().equalsIgnoreCase(city)).sorted((row, t1) -> row.getData_alta().compareTo(t1.getData_alta())).limit(10).forEach(System.out::println);
+        rows.stream().filter(row -> row.getMunicipi().equalsIgnoreCase(city)).sorted(new ComparatorDataAlta()).limit(10).forEach(System.out::println);
     }
 
     private void sortWorkshopsByYearAndPostalCode() {
         System.out.println("Introduzca el código postal:");
         String postalCode = scanner.nextLine();
-        rows.stream().filter(row -> row.getCodi_postal() == Integer.parseInt(postalCode)).sorted((row, t1) -> row.getData_alta().compareTo(t1.getData_alta())).limit(10).forEach(System.out::println);
+        rows.stream().filter(row -> row.getCodi_postal() == Integer.parseInt(postalCode)).sorted(new ComparatorDataAlta()).limit(10).forEach(System.out::println);
     }
 
     private void showDeregisteredWorkshops() {

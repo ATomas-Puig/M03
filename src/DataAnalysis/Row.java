@@ -11,7 +11,7 @@ import java.util.List;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @Data
-public class Row {
+public class Row implements Comparator<Row> {
 
     public String n_m_registre_taller;
     public String nom_titular;
@@ -50,4 +50,17 @@ public class Row {
     }
 
 
+    @Override
+    public int compare(Row row1, Row row2) {
+        if (row1.getData_alta().before(row2.getData_alta())) return -1;
+        else if (row1.getData_alta().after(row2.getData_alta())) return 1;
+        else return 0;
+    }
+
+    /*@Override
+    public int compareTo(Object o) {
+        Row row = (Row) o;
+
+        return this.getData_alta().compareTo(((Row) o).getData_alta());
+    }*/
 }

@@ -1,5 +1,7 @@
 package DataAnalysis;
 
+import com.sun.xml.internal.ws.util.StringUtils;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
@@ -7,6 +9,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class XMLReader {
     private String listaXML;
@@ -29,7 +33,7 @@ public class XMLReader {
             JAXBContext contextObj = JAXBContext.newInstance(Response.class);
             Unmarshaller unmarshallerObj = contextObj.createUnmarshaller();
             Response response = (Response) unmarshallerObj.unmarshal(url);
-            rows = response.row.row;
+            rows = response.row.row.stream().filter(Objects::nonNull).filter(row -> row.getData_alta() != null).collec;
 
         } catch (JAXBException e) {
             e.printStackTrace();

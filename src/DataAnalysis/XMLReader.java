@@ -33,7 +33,7 @@ public class XMLReader {
             JAXBContext contextObj = JAXBContext.newInstance(Response.class);
             Unmarshaller unmarshallerObj = contextObj.createUnmarshaller();
             Response response = (Response) unmarshallerObj.unmarshal(url);
-            rows = response.row.row.stream().filter(row -> row.getData_alta() != null).collect(Collectors.toList());
+            rows = response.row.row;
 
         } catch (JAXBException e) {
             e.printStackTrace();
